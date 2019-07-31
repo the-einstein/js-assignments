@@ -23,6 +23,7 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
+   return arr.indexOf(value);
    throw new Error('Not implemented');
 }
 
@@ -38,6 +39,13 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
+   var a = [];
+   var b = 1;
+   for (var i =0; i<len; i++){
+      a.push(b)
+      b+=2;
+   }
+   return a;
    throw new Error('Not implemented');
 }
 
@@ -54,6 +62,7 @@ function generateOdds(len) {
  *    [] => [] 
  */
 function doubleArray(arr) {
+   return arr.concat(arr);
    throw new Error('Not implemented');
 }
 
@@ -70,6 +79,13 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
+   return arr.filter(function(v) {
+      return v < 0;
+    }).concat(arr.filter(function(v) {
+      return v == 0;
+    }), arr.filter(function(v) {
+      return v > 0;
+    }))
    throw new Error('Not implemented');
 }
 
@@ -85,6 +101,7 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
+   return arr.filter(function(v){return v instanceof String});
    throw new Error('Not implemented');
 }
 
@@ -116,6 +133,7 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
+   return arr.toUpperCase();
    throw new Error('Not implemented');
 }
 
@@ -131,6 +149,11 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
+   var ar = [];
+   for(var i =0; i<arr.length; i++){
+      ar.push(arr[i].length);
+   }
+   return ar;
    throw new Error('Not implemented');
 }
 
@@ -160,6 +183,8 @@ function insertItem(arr, item, index) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
 function getHead(arr, n) {
+   arr.length = n;
+   return arr;
    throw new Error('Not implemented');
 }
 
@@ -386,6 +411,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
+   return arr.join(',');
    throw new Error('Not implemented');
 }
 
