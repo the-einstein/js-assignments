@@ -30,6 +30,16 @@
  *
  */
 function getFizzBuzz(num) {
+    if (num%3 == 0 && num%5 == 0){
+        return 'FizzBuzz';
+    }
+    
+    else if (num % 5 == 0){
+        return 'Buzz';
+    }
+    else if(num %3 == 0){
+        return 'Fizz';
+    }else return num;
     throw new Error('Not implemented');
 }
 
@@ -46,6 +56,15 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
+    if(n<0){
+        return -1;
+    }
+    if(n==0){
+        return 1;
+    }
+    else{
+        return n*getFactorial(n-1);
+    }
     throw new Error('Not implemented');
 }
 
@@ -63,6 +82,14 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
+  var a=0;
+  if (n1<n2){
+      for(let i =n1;i<=n2;i++){
+          a+=i;
+      }
+      return a;
+  }
+  else return n1;
     throw new Error('Not implemented');
 }
 
@@ -82,6 +109,9 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
+    if ( a+b>c&& b+c>a&& c+a>b){
+        return true;
+    }else return false;
     throw new Error('Not implemented');
 }
 
@@ -119,6 +149,9 @@ function isTriangle(a,b,c) {
  *  
  */
 function doRectanglesOverlap(rect1, rect2) {
+    if(rect2.top/rect1.top == rect2.left/rect1.left && rect2.width/rect1.width == rect2.height/rect1.height){
+        return true;
+    }else return false;
     throw new Error('Not implemented');
 }
 
@@ -209,6 +242,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
+    str.reverseString();
     throw new Error('Not implemented');
 }
 
@@ -226,6 +260,7 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
+    num.reverseInteger();
     throw new Error('Not implemented');
 }
 
@@ -270,6 +305,13 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
+    if (num<=9){
+        return num;
+    }
+    else
+    {
+    
+    }
     throw new Error('Not implemented');
 }
 
@@ -296,6 +338,7 @@ function getDigitalRoot(num) {
  *   '{[(<{[]}>)]}' = true 
  */
 function isBracketsBalanced(str) {
+    
     throw new Error('Not implemented');
 }
 
