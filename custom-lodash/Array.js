@@ -12,8 +12,13 @@ if (arr.length%num ==0){
 }
 }
 //2. Compact function
-const compact = () => {
-
+const compact = (arr) => {
+    const a =[];
+for (var i=0; i<arr.length; i++){
+    if(arr[i]!=false){
+       a[i]=arr[i];
+    }
+}
 }
 //3. Drop function
 const drop = (arr, num)=>{
@@ -29,8 +34,10 @@ const drop = (arr, num)=>{
     }
 }
 //4. DropWhile function
-const dropWhile = () => {
-
+const dropWhile = (array, predicate) => {
+return (array && array.length)
+? baseWhile(array, getIterstee(predicate, 3), true)
+: [];
 }
 //5. Take function
 const take = (arr, n)=>{
@@ -75,6 +82,14 @@ const zip = ()=>{
 }
 
 //////// OBJECTS
+//function to get size of each object
+Object.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
 
 //1. merge function
 const merge = (obj, sources)=>{
@@ -82,7 +97,18 @@ const merge = (obj, sources)=>{
 }
 
 //2. omit function
-const omit = () => {
+const omit = (arr, obj) => {
+const a = Object.size(arr);
+var newArr =[];
+for(var i; i<a;){
+    for(var j; j< obj.length ;j++){
+        if (arr[i]!=obj[j]){
+            newArr[i]=arr[i];
+        }
+    }
+    i++;
+}
+return newArr;
 
 }
 
@@ -104,5 +130,5 @@ const pickBy = () => {
 
 //6. toPairs function
 const toPairs = () => {
-    
+
 }
