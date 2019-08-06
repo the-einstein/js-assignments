@@ -93,7 +93,12 @@ Object.size = function(obj) {
 
 //1. merge function
 const merge = (obj, sources)=>{
-
+for(var i=0; i<Object.size(sources); i++){
+    for (var j=1; j<Object.size(sources); j++){
+    obj[j]=sources[i];  
+    }
+}
+return obj;
 }
 
 //2. omit function
