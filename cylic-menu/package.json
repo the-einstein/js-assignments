@@ -2,7 +2,7 @@
   "name": "cylic-menu",
   "version": "1.0.0",
   "description": "",
-  "public":"true",
+  "public": "true",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,8 @@
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
   }
 }
