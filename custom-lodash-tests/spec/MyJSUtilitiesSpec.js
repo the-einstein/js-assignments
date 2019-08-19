@@ -1,3 +1,5 @@
+const utils = require("../index.js");
+
 describe("MyJSUtilities", function() {
     
     
@@ -37,46 +39,46 @@ describe("MyJSUtilities", function() {
 
 
        describe("Object Utils", function() {
-        it("Test for Chunk",function() {
+        it("Test for Merge",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for Omit",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for OmitBy",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for Pick",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for PickBy",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for ToPairs",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for Identity",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for Negate",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for SameValueZero",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for Matches",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for MatchesProperty",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for Iteratee",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for Property",function() {
             expect().nothing();
           });
-          it("Test for Chunk",function() {
+          it("Test for Push",function() {
             expect().nothing();
           });
        });
