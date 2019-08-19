@@ -1,7 +1,11 @@
 const utils = require("../index.js");
 
 describe("MyJSUtilities", function() {
-    
+    const users = [
+        { 'user': 'barney',  'active': false },
+        { 'user': 'fred',    'active': false },
+        { 'user': 'pebbles', 'active': true }
+      ];
     
     describe("Array Utils", function() {
           it("Test for Chunk",function() {
@@ -14,10 +18,15 @@ describe("MyJSUtilities", function() {
             expect(utils.compact([0, 1, false, 2, '', 3])).toEqual([1, 2, 3]);
           });
           it("Test for Drop",function() {
-            expect().nothing();
+            expect(utils.drop).toBeDefined();
+            expect(utils.drop([1, 2, 3])).toEqual([2, 3]);
+            expect(utils.drop([1, 2, 3], 2)).toEqual([3]);
+            expect(utils.drop([1, 2, 3], 5)).toEqual([]);
+            expect(utils.drop([1, 2, 3], 0)).toEqual([1, 2, 3]);
           });
           it("Test for DropWhile",function() {
-            expect().nothing();
+            expect(utils.dropWhile).toBeDefined();
+            expect(utils.dropWhile(users, function(o) { return !o.active; })).toEqual([users[2]]);
           });
           it("Test for Take",function() {
             expect().nothing();
