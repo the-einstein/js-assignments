@@ -5,10 +5,13 @@ describe("MyJSUtilities", function() {
     
     describe("Array Utils", function() {
           it("Test for Chunk",function() {
-            expect().nothing();
+            expect(utils.chunk).toBeDefined();
+            expect(utils.chunk(['a', 'b', 'c', 'd'], 2)).toEqual([['a', 'b'], ['c', 'd']]);
+            expect(utils.chunk(['a', 'b', 'c', 'd'], 3)).toEqual([['a', 'b', 'c'], ['d']]);
           });
           it("Test for Compact",function() {
-            expect().nothing();
+            expect(utils.compact).toBeDefined();
+            expect(utils.compact([0, 1, false, 2, '', 3])).toEqual([1, 2, 3]);
           });
           it("Test for Drop",function() {
             expect().nothing();
