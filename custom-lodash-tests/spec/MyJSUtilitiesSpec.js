@@ -51,7 +51,7 @@ describe("MyJSUtilities", function() {
           });
           it("Test for Find",function() {
             expect(utils.find).toBeDefined();
-            expect(utils.find()).toEqual();
+            expect(utils.find(arr, 1)).toEqual(1);
           });
           it("Test for Includes",function() {
             expect().nothing();
