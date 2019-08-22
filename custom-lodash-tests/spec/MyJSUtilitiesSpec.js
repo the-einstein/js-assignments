@@ -30,10 +30,14 @@ describe("MyJSUtilities", function() {
             expect(utils.dropWhile(users, { 'user': 'barney', 'active': false })).toEqual([users[1], users[2]]);
           });
           it("Test for Take",function() {
-            expect().nothing();
+            expect(utils.take).toBeDefined();
+            expect(utils.take([1,2,1,5,4,8,4],3)).toEqual([1,2,1]);
+            expect(utils.take(["a",4, "adjbvgshdfv", 4,6,,8],4)).toEqual(["a",4, "adjbvgshdfv", 4]);
+            expect(utils.take([2,3,5], 6)).toEqual([2,3,5]);
           });
           it("Test for Filter",function() {
-            expect().nothing();
+            expect(utils.filter).toBeDefined();
+            expect(utils.filter()).toEqual();
           });
           it("Test for Find",function() {
             expect().nothing();
