@@ -6,6 +6,16 @@ describe("MyJSUtilities", function() {
         { 'user': 'fred',    'active': false },
         { 'user': 'pebbles', 'active': true }
       ];
+    const arr = [
+      1,
+      2,
+      3,
+      4,
+      "a",
+      "b",
+      "c",
+      "d",
+      ];
     
     describe("Array Utils", function() {
           it("Test for Chunk",function() {
@@ -40,7 +50,8 @@ describe("MyJSUtilities", function() {
             expect(utils.filter()).toEqual();
           });
           it("Test for Find",function() {
-            expect().nothing();
+            expect(utils.find).toBeDefined();
+            expect(utils.find()).toEqual();
           });
           it("Test for Includes",function() {
             expect().nothing();
