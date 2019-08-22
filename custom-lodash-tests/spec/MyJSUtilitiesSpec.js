@@ -27,6 +27,7 @@ describe("MyJSUtilities", function() {
           it("Test for DropWhile",function() {
             expect(utils.dropWhile).toBeDefined();
             expect(utils.dropWhile(users, function(o) { return !o.active; })).toEqual([users[2]]);
+            expect(utils.dropWhile(users, { 'user': 'barney', 'active': false })).toEqual([users[1], users[2]]);
           });
           it("Test for Take",function() {
             expect().nothing();
