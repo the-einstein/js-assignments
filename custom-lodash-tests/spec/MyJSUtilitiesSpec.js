@@ -68,11 +68,22 @@ describe("MyJSUtilities", function() {
             expect(utils.includes({ 'a': 1, 'b': 2 }, 1)).toBeTruthy();
             expect(utils.includes('abcd', 'bc')).toBeTruthy();
           });
+          function square(n) {
+            return n * n;
+          }
+          const mapusers = [
+            { 'user': 'barney' },
+            { 'user': 'fred' }
+          ];
           it("Test for Map",function() {
-            expect().nothing();
+            expect(utils.map).toBeDefined();
+            expect(utils.map([4, 8], square)).toEqual([16,64]);
+            expect(utils.map({ 'a': 4, 'b': 8 }, square)).toEqual([16,64]);
+            expect(utils.map(mapusers, 'user')).toEqual(["barney", "fred"]);
           });
           it("Test for Zip",function() {
-            expect().nothing();
+            expect(utils.zip).toBeDefined();
+            expect(utils.)
           });
        });
        
