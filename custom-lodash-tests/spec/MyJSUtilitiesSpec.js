@@ -106,16 +106,26 @@ describe("MyJSUtilities", function() {
             expect(utils.omit({ 'a': 1, 'b': '2', 'c': 3 },['a', 'c'])).toEqual({'b':'2'});
           });
           it("Test for OmitBy",function() {
-            expect().nothing();
+            expect(utils.omitBy).toBeDefined();
+            expect(utils.omitBy({ 'a': 1, 'b': '2', 'c': 3 }, _.isNumber)).toEqual({'b':'2'});
           });
           it("Test for Pick",function() {
-            expect().nothing();
+            expect(utils.pick).toBeDefined();
+            expect(utils.pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c'])).toEqual({ 'a': 1, 'c': 3 });
           });
           it("Test for PickBy",function() {
-            expect().nothing();
+            expect(utils.pickBy).toBeDefined();
+            expect(utils.pickBy({ 'a': 1, 'b': '2', 'c': 3 }, _.isNumber)).toEqual({ 'a': 1, 'c': 3 });
           });
+          function Foo() {
+            this.a = 1;
+            this.b = 2;
+          }
+           
+          Foo.prototype.c = 3;
           it("Test for ToPairs",function() {
-            expect().nothing();
+            expect(utils.toPairs).toBeDefined();
+            expect(utils.toPairs(new Foo)).toEqual( [['a', 1], ['b', 2]]);
           });
           it("Test for Identity",function() {
             expect().nothing();
