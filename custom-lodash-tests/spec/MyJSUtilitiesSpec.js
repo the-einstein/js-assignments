@@ -83,18 +83,27 @@ describe("MyJSUtilities", function() {
           });
           it("Test for Zip",function() {
             expect(utils.zip).toBeDefined();
-            expect(utils.)
+            expect(utils.zip(['a', 'b'], [1, 2], [true, false])).toEqual([['a', 1, true], ['b', 2, false]]);
           });
        });
        
 
 
        describe("Object Utils", function() {
+        const object = {
+          'a': [{ 'b': 2 }, { 'd': 4 }]
+        };
+         
+        const other = {
+          'a': [{ 'c': 3 }, { 'e': 5 }]
+        };
         it("Test for Merge",function() {
-            expect().nothing();
+            expect(utils.merge).toBeDefined();
+            expect(utils.merge(object, other)).toEqual({ 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] });
           });
           it("Test for Omit",function() {
-            expect().nothing();
+            expect(utils.omit).toBeDefined();
+            expect(utils.omit({ 'a': 1, 'b': '2', 'c': 3 },['a', 'c'])).toEqual({'b':'2'});
           });
           it("Test for OmitBy",function() {
             expect().nothing();
