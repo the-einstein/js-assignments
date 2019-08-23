@@ -128,7 +128,8 @@ describe("MyJSUtilities", function() {
             expect(utils.toPairs(new Foo)).toEqual( [['a', 1], ['b', 2]]);
           });
           it("Test for Identity",function() {
-            expect().nothing();
+            expect(utils.identity).toBeDefined();
+            expect(utils.identity({'a':1}) === object).toBeTruthy;
           });
           it("Test for Negate",function() {
             expect().nothing();
