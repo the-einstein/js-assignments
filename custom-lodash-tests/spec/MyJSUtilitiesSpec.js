@@ -107,7 +107,7 @@ describe("MyJSUtilities", function() {
           });
           it("Test for OmitBy",function() {
             expect(utils.omitBy).toBeDefined();
-            expect(utils.omitBy({ 'a': 1, 'b': '2', 'c': 3 }, _.isNumber)).toEqual({'b':'2'});
+            expect(utils.omitBy({ 'a': 1, 'b': '2', 'c': 3 }, Math.isNumber)).toEqual({'b':'2'});
           });
           it("Test for Pick",function() {
             expect(utils.pick).toBeDefined();
@@ -115,7 +115,7 @@ describe("MyJSUtilities", function() {
           });
           it("Test for PickBy",function() {
             expect(utils.pickBy).toBeDefined();
-            expect(utils.pickBy({ 'a': 1, 'b': '2', 'c': 3 }, _.isNumber)).toEqual({ 'a': 1, 'c': 3 });
+            expect(utils.pickBy({ 'a': 1, 'b': '2', 'c': 3 }, Math.isNumber)).toEqual({ 'a': 1, 'c': 3 });
           });
           function Foo() {
             this.a = 1;
@@ -132,25 +132,47 @@ describe("MyJSUtilities", function() {
             expect(utils.identity({'a':1}) === object).toBeTruthy;
           });
           it("Test for Negate",function() {
-            expect().nothing();
+            expect(utils.negate).toBeDefined();
+            expect(utils.filter([1, 2, 3, 4, 5, 6], utils.negate(Math.isEven))).toEqual( [1, 3, 5]);
           });
           it("Test for SameValueZero",function() {
-            expect().nothing();
+            expect(utils.sameValueZero).toBeDefined();
+            expect(utils.sameValueZero(1,5)).toBeFalsy();
           });
+          let objects = [
+            { 'a': 1, 'b': 2, 'c': 3 },
+            { 'a': 4, 'b': 5, 'c': 6 }
+          ];
           it("Test for Matches",function() {
-            expect().nothing();
+            expect(utils.matches).toBeDefined();
+            expect(utils.filter(objects, utils.matches({ 'a': 4, 'c': 6 }))).toEqual([{ 'a': 4, 'b': 5, 'c': 6 }]);
           });
           it("Test for MatchesProperty",function() {
-            expect().nothing();
+            expect(utils.matchesProperty).toBeDefined();
+            expect(utils.find(objects, utils.matchesProperty('a', 4))).toEqual({ 'a': 4, 'b': 5, 'c': 6 });
           });
+          let users = [
+            { 'user': 'barney', 'age': 36, 'active': true },
+            { 'user': 'fred',   'age': 40, 'active': false }
+          ];
           it("Test for Iteratee",function() {
-            expect().nothing();
+            expect(utils.iteratee).toBeDefined();
+            expect(utils.filter(users, utils.iteratee({ 'user': 'barney', 'active': true }))).toEqual([{ 'user': 'barney', 'age': 36, 'active': true }]);
+            expect(utils.map(users, utils.iteratee('user'))).toEqual(['barney', 'fred']);
+            expect(utils.filter(['abc', 'def'], /ef/)).toEqual(['def']);
           });
+          let objects5 = [
+            { 'a': { 'b': 2 } },
+            { 'a': { 'b': 1 } }
+          ];
           it("Test for Property",function() {
-            expect().nothing();
+            expect(utils.property).toBeDefined();
+            expect(utils.map(objects5, utils.property('a.b'))).toEqual([2, 1]);
+            expect(utils.map(Array.prototype.sortBy(objects5, utils.property(['a', 'b'])), 'a.b')).toEqual([1, 2]);
           });
           it("Test for Push",function() {
-            expect().nothing();
+            expect(utils.push).toBeDefined();
+            expect(utils.push(5)).toEqual(5);
           });
        });
        

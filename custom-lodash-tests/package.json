@@ -13,12 +13,13 @@
     "karma": "^4.2.0",
     "karma-browserify": "^6.1.0",
     "karma-chrome-launcher": "^3.1.0",
+    "karma-commonjs": "^1.0.0",
     "karma-jasmine": "^2.0.1",
     "karma-requirejs": "^1.1.0",
     "watchify": "^3.11.1"
   },
   "scripts": {
-    "test": "jasmine start"
+    "test": "karma start karma.conf.js"
   },
   "keywords": [],
   "author": "",
