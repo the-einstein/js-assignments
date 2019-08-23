@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Thu Aug 22 2019 21:08:35 GMT+0500 (Uzbekistan Standard Time)
+// Generated on Fri Aug 23 2019 15:31:18 GMT+0500 (Uzbekistan Standard Time)
 
 module.exports = function(config) {
   config.set({
@@ -10,11 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['browserify','jasmine', 'requirejs', 'commonjs'],
+    frameworks: ['jasmine', 'commonjs'],
 
 
     // list of files / patterns to load in the browser
-    files: ['spec/**/*.js'
+    files: [
+      'specy'
     ],
 
 
@@ -26,14 +27,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/**/*.js': [ 'commonjs' ]
+      'spec/**/*.js': [ 'commonjs' ]
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
 
     // web server port
@@ -55,7 +56,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome', 'Firefox'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode
@@ -64,11 +65,6 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity,
-
-    browserify: {
-      debug: true,
-      transform: [ 'brfs' ]
-    }
+    concurrency: Infinity
   })
 }
