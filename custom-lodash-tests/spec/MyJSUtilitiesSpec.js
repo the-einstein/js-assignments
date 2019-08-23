@@ -4,7 +4,9 @@ describe("MyJSUtilities", function() {
     const users = [
         { 'user': 'barney',  'active': false },
         { 'user': 'fred',    'active': false },
-        { 'user': 'pebbles', 'active': true }
+        { 'user': 'pebbles', 'active': true },
+       /* { 'user': 'barney1', 'age': 36, 'active': true },
+        { 'user': 'fred1',   'age': 40, 'active': false }*/  
       ];
     const arr = [
       1,
@@ -47,14 +49,24 @@ describe("MyJSUtilities", function() {
           });
           it("Test for Filter",function() {
             expect(utils.filter).toBeDefined();
-            expect(utils.filter()).toEqual();
+            expect(utils.filter(users, function(o) { return !o.active; })).toEqual([users[0], users[1]]);
+            expect(utils.filter(users, { 'age': 36, 'active': false })).toEqual();
+            expect(utils.filter(users, ['active', false])).toEqual();
+            expect(utils.filter(users, 'active')).toEqual();
           });
           it("Test for Find",function() {
             expect(utils.find).toBeDefined();
-            expect(utils.find(arr, 1)).toEqual(1);
+            expect(utils.find(users, function(o) { return o.age < 40; })).toEqual(1);
+            expect(utils.find(users, { 'age': 1, 'active': true })).toEqual();
+            expect(utils.find(users, ['active', false])).toEqual();
+            expect(utils.find(users, 'active')).toEqual();
           });
           it("Test for Includes",function() {
-            expect().nothing();
+            expect(utils.includes).toBeDefined();
+            expect(utils.includes([1, 2, 3], 1)).toBeTruthy();
+            expect(utils.includes([1, 2, 3], 1, 2)).toBeFalsy();
+            expect(utils.includes({ 'a': 1, 'b': 2 }, 1)).toBeTruthy();
+            expect(utils.includes('abcd', 'bc')).toBeTruthy();
           });
           it("Test for Map",function() {
             expect().nothing();
